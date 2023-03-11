@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class Checkin{
-    Room room;
+    private Room room;
     private LocalDate from;
     private LocalDate to;
     private String note;
