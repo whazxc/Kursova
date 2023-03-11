@@ -2,6 +2,7 @@ public class Room {
     private int room;
     private int beds;
     private boolean available = false;
+    private Integer guests;
     public void setRoom(int room) {
         this.room = room;
     }
@@ -24,5 +25,9 @@ public class Room {
 
     public boolean isAvailable() {
         return available;
+    }
+
+    public Integer getGuests() {
+        return guests;
     }
 }
