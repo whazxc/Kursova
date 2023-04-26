@@ -16,5 +16,6 @@ public class Main {
         h.checkIn(3, LocalDate.of(2005,12,1), LocalDate.of(2007,2,2), "gg");
         h.availability(LocalDate.of(2035,3,3));
 
+
     }
 }
