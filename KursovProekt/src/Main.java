@@ -1,46 +1,20 @@
 import java.time.LocalDate;
 
 public class Main {
-    static Room [] room = new Room[5];
-    static Checkin [] ch = new Checkin[5];
 
     public static void main(String[] args) {
-        for(int a = 0; a < room.length; a++){
-            room[a] = new Room();
-        }
-        room[0].setBeds(2);
-        room[1].setBeds(2);
-        room[2].setBeds(2);
-        room[3].setBeds(2);
-        room[4].setBeds(2);
-        for(int a = 0; a < room.length; a++){
-            room[a].setRoom(a+1);
-        }
-        ch[0] = new Checkin(room[0], LocalDate.of(2022, 3, 5), LocalDate.of(2022, 4, 5),"Lores");
-        ch[1] = new Checkin(room[1], LocalDate.of(2021, 5, 5), LocalDate.of(2021, 6, 23),"Lores");
-        ch[2] = new Checkin(room[2], LocalDate.of(2023, 8, 5), LocalDate.of(2024, 4, 5),"Lores");
-        ch[3] = new Checkin(room[3], LocalDate.of(2013, 3, 5), LocalDate.of(2014, 4, 5),"Lores");
-        ch[4] = new Checkin(room[4], LocalDate.of(2022, 3, 5), LocalDate.of(2022, 4, 5),"Lores");
+        Hotel h = new Hotel();
+        Room room1 = new Room(1, 2);
+        Room room2 = new Room(2, 4);
+        Room room3 = new Room(3, 1);
+        h.addRoom(room1);
+        h.addRoom(room2);
+        h.addRoom(room3);
 
-        LocalDate date1 = LocalDate.of(2011,1,1);
-        LocalDate date2 = LocalDate.of(2015,1,1);
-        Report(date1, date2);
-    }
-    public static void Availability(LocalDate date){
-        for(int a = 0; a < room.length; a++){
-            if(date.isAfter(ch[a].getTo()) || date.isBefore(ch[a].getFrom())){
-                System.out.println("Room " + ch[a].getRoom() + " is available on " + date);
-            }
-        }
-    }
-    public static void Checkout(Checkin c){
-        c.setGuests(0);
-    }
-    public static void Report(LocalDate dateFrom, LocalDate dateTo){
-        for(int a = 0; a < room.length; a++){
-            if(ch[a].getFrom().isAfter(dateFrom) && ch[a].getTo().isBefore(dateTo)){
-                System.out.println("Room " + ch[a].getRoom() + " " + ch[a].getFrom() + " to " + ch[a].getTo());
-            }
-        }
+        h.checkIn(1, LocalDate.of(2033,1,1), LocalDate.of(2034,2,2), "gg");
+        h.checkIn(2, LocalDate.of(2013,3,1), LocalDate.of(2014,2,6), "gg");
+        h.checkIn(3, LocalDate.of(2005,12,1), LocalDate.of(2007,2,2), "gg");
+        h.availability(LocalDate.of(2035,3,3));
+
     }
 }
