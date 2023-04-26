@@ -53,4 +53,12 @@ public class Hotel {
             }
         }
     }
+
+    public void report(LocalDate from, LocalDate to){
+        for(int a = 0; a < rooms.size(); a++){
+            if(!rooms.get(a).getFromDate().isAfter(to) && !rooms.get(a).getToDate().isBefore(from)){
+                System.out.println("Room number: " + rooms.get(a).getRoom() + " is used during the period - " + rooms.get(a).getFromDate() + " - " + rooms.get(a).getToDate());
+            }
+        }
+    }
 }
