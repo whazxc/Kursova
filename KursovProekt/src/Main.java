@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
         Hotel h = new Hotel();
-        Room room1 = new Room(1, 2);
-        Room room2 = new Room(2, 4);
+        Room room1 = new Room(1, 1);
+        Room room2 = new Room(2, 1);
         Room room3 = new Room(3, 1);
         h.addRoom(room1);
         h.addRoom(room2);
@@ -15,7 +15,7 @@ public class Main {
         h.checkIn(2, LocalDate.of(2013,3,1), LocalDate.of(2014,2,6), "gg");
         h.checkIn(3, LocalDate.of(2005,1,1), LocalDate.of(2005,1,3), "gg");
 
-        h.report(LocalDate.of(2004,1,1),LocalDate.of(2014,1,1));
+        h.find(2,LocalDate.of(2005,1,1), LocalDate.of(2013,2,1));
 
     }
 }

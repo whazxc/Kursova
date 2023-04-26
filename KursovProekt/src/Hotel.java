@@ -51,6 +51,7 @@ public class Hotel {
                 rooms.get(a).setFromDate(null);
                 rooms.get(a).setToDate(null);
                 rooms.get(a).setNote("");
+                rooms.get(a).setAvailable(true);
             }
         }
     }
@@ -62,6 +63,19 @@ public class Hotel {
                 System.out.println("Room number: " + rooms.get(a).getRoom() + " is used during the period - " + rooms.get(a).getFromDate() + " - " + rooms.get(a).getToDate());
                 System.out.println("The room has been used for " + ChronoUnit.DAYS.between(rooms.get(a).getFromDate(), rooms.get(a).getToDate()) + " days");
             }
+        }
+    }
+
+    public void find(int beds, LocalDate from, LocalDate to){
+        boolean roomsAvailable = false;
+        for(int a = 0; a < rooms.size(); a++){
+            if(rooms.get(a).getBeds() == beds && (rooms.get(a).getFromDate().isAfter(to) || rooms.get(a).getToDate().isBefore(from))){
+                System.out.println("Room number: " + rooms.get(a).getRoom() + " matches your requirements");
+                roomsAvailable = true;
+            }
+        }
+        if(roomsAvailable == false){
+            System.out.println("There aren't any rooms available that match your requirements");
         }
     }
 }
