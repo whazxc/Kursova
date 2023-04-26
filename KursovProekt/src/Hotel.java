@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Hotel {
@@ -55,9 +56,11 @@ public class Hotel {
     }
 
     public void report(LocalDate from, LocalDate to){
+
         for(int a = 0; a < rooms.size(); a++){
             if(!rooms.get(a).getFromDate().isAfter(to) && !rooms.get(a).getToDate().isBefore(from)){
                 System.out.println("Room number: " + rooms.get(a).getRoom() + " is used during the period - " + rooms.get(a).getFromDate() + " - " + rooms.get(a).getToDate());
+                System.out.println("The room has been used for " + ChronoUnit.DAYS.between(rooms.get(a).getFromDate(), rooms.get(a).getToDate()) + " days");
             }
         }
     }
