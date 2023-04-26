@@ -14,8 +14,9 @@ public class Main {
         h.checkIn(1, LocalDate.of(2033,1,1), LocalDate.of(2034,2,2), "gg");
         h.checkIn(2, LocalDate.of(2013,3,1), LocalDate.of(2014,2,6), "gg");
         h.checkIn(3, LocalDate.of(2005,12,1), LocalDate.of(2007,2,2), "gg");
-        h.availability(LocalDate.of(2035,3,3));
 
+        h.checkOut(1);
+        h.availability(LocalDate.of(2033,1,2));
 
     }
 }

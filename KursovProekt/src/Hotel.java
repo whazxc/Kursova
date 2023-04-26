@@ -42,4 +42,15 @@ public class Hotel {
             }
         }
     }
+
+    public void checkOut(int roomNumber){
+        for(int a = 0; a < rooms.size(); a++){
+            if(rooms.get(a).getRoom() == roomNumber){
+                rooms.get(a).setGuests(0);
+                rooms.get(a).setFromDate(null);
+                rooms.get(a).setToDate(null);
+                rooms.get(a).setNote("");
+            }
+        }
+    }
 }
