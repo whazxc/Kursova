@@ -72,6 +72,7 @@ public class Hotel {
             if(rooms.get(a).getBeds() == beds && (rooms.get(a).getFromDate().isAfter(to) || rooms.get(a).getToDate().isBefore(from))){
                 System.out.println("Room number " + rooms.get(a).getRoom() + " matches your requirements");
                 roomsAvailable = true;
+                
             }
         }
         if(roomsAvailable == false){
